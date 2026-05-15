@@ -101,25 +101,29 @@ const data = [
 ]
 
 const container = document.querySelector(".products-container");
+const cart = container.querySelector('.cart');
 
 console.log("msg", data);
 
 data.forEach((item) => {
-  /*console.log("msg item", item)
-  container.textContent += item.name;*/
+    const itemHTML = `
+    <div class="item-container">
+            <div class="item-image-container">
+                <img src="${item.image.mobile}" alt="${item.name}" />
+                <button>
+                    <img src="assets/images/carbon_shopping-cart-plus.svg" alt="icone de carrinho" />
+                    <span>Add to Cart</span>
+                </button>
+            </div>
+            <span class="item-category">${item.category}</span>
+            <span class="item-name">${item.name}</span>
+            <span class="item-price">$${item.price.toFixed(2)}</span>
+        </div>`;
 
-  container.innerHTML += `
-  <div class="item-container">
-      <div class="item-image-container">
-        <img src="${item.image.mobile}" alt="${item.name}" />
-        <button>
-          <img src="assets/images/carbon_shopping-cart-plus.svg" alt="icone de carrinho" />
-          <span>Add to Cart</span>
-        </button>
-      </div>
-      <span class="item-category">${item.category}</span>
-      <span class="item-name">${item.name}</span>
-      <span class="item-price">$${item.price.toFixed(2)}</span>
-    </div>`
-})
+    if (cart) {
+        cart.insertAdjacentHTML('beforebegin', itemHTML);
+    } else {
+        container.insertAdjacentHTML('beforeend', itemHTML);
+    }
+});
 
