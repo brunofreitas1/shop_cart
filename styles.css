@@ -69,14 +69,14 @@ body{
   flex-shrink: 0;
 }
 
-#item-name {
+.item-category {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 150%;
   color: #87635A;
 }
 
-#item-description {
+.item-name {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0px;
@@ -84,7 +84,7 @@ body{
   color: #260F08;
 }
 
-#item-price {
+.item-price {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0px;
